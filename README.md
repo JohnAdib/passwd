@@ -16,12 +16,6 @@ I'm a developer. I want a simple and personal password manger and i can't find i
 - [ ] Telegram integration!
 
 
-## Release notes
-
-### Version 1
-Waiting...
-
-
 ## Installation
 After finish version 1 we describe how to install
 
@@ -34,7 +28,13 @@ This project exists thanks to all of the people who contribute.
 If you discover bugs, please report them in GitHub Issues.
 
 
-## QA
+## Release notes
+
+### Version 1
+Waiting...
+
+
+### Q&A
 
 #### What is the safest way to keep passwords?
 To keep your passwords safe, just write them down on a piece of paper and put it in a safe place like your wallet. You can't hack paper.
@@ -59,5 +59,5 @@ Although they greatly ease the user’s burden, password managers pose a risk in
 
 
 ## Disclaimer
-**use this project at your own risk!**
+**Use this project at your own risk!**
 

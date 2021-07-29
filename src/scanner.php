@@ -18,6 +18,7 @@ class scanner
 			$myDir = basename($myPath);
 			$myId = md5($myPath);
 			$myIcon = 'folder';
+			$myUrl = "?explorer=". $myId;
 
 			$newItem =
 			[
@@ -25,8 +26,13 @@ class scanner
 				'text' => $myDir,
 				// 'icon' => $myIcon,
 				'path' => $myPath,
+				'url' => $myUrl,
 				'type' => 'folder',
 				'children' => self::drawFolderItems($myPath),
+				'a_attr' =>
+				[
+					"href" =>  $myUrl,
+				],
 			];
 
 			// add new item
@@ -41,6 +47,7 @@ class scanner
 			$myDir = basename($myPath);
 			$myId = md5($myPath);
 			$myIcon = 'jstree-file';
+			$myUrl = "?explorer=". $myId;
 
 			$newItem =
 			[
@@ -48,8 +55,13 @@ class scanner
 				'text' => $myDir,
 				'icon' => $myIcon,
 				'path' => $myPath,
+				'url' => $myUrl,
 				'type' => 'file',
-				'children' => [],
+				// 'children' => null,
+				'a_attr' =>
+				[
+					"href" =>  $myUrl,
+				],
 			];
 
 			// add new item

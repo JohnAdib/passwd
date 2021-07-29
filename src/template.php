@@ -15,7 +15,14 @@ class template
 
 		if($_GET)
 		{
-			if(isset($_GET["id"]))
+			if(isset($_GET["explorer"]))
+			{
+				$myPage = 'explorer';
+				// define folder and files array
+				$myExplorerTree = scanner::drawTree();
+				$myExplorerItems = [];
+			}
+			else if(isset($_GET["id"]))
 			{
 				// if(isset($MOVIES[$_GET["id"]]))
 				// {

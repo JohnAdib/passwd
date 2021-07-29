@@ -10,13 +10,27 @@ class scanner
 		{
 			$myPath = realpath($dir);
 			$myDir = basename($myPath);
+			$myId = md5($myPath);
+			$myIcon = '';
 
-			$tree[$myDir] =
+			$newItem =
 			[
+				'id' => $myId,
+				'text' => $myDir,
+				'icon' => $myIcon,
+				'path' => $myPath,
+				'type' => 'folder',
+				'children' => [],
 				'files' => self::get_list_of_files($dir),
 				'folders' => self::get_list_of_folders($dir),
 			];
+
+			// add new item
+			$tree[] = $newItem;
 		}
+
+		// var_dump(json_encode($tree, JSON_PRETTY_PRINT));
+		// exit();
 
 		return $tree;
 	}

@@ -10,8 +10,6 @@ class magic
 {
 	public static function snap()
 	{
-		$tree = scanner::drawTree();
-
 		// draw html
 		template::draw();
 	}

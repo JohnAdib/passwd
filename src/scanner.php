@@ -3,15 +3,44 @@ class scanner
 {
 	public static function drawTree()
 	{
-		$tree = [];
-		$folders = self::get_list_of_folders();
+		return self::drawFolderItems(PASSWD_SECRET);
+	}
+
+
+	public static function drawFolderItems($_path)
+	{
+		$myItems = [];
+		$folders = self::get_list_of_folders($_path);
 
 		foreach ($folders as $dir)
 		{
 			$myPath = realpath($dir);
 			$myDir = basename($myPath);
 			$myId = md5($myPath);
-			$myIcon = '';
+			$myIcon = 'folder';
+
+			$newItem =
+			[
+				'id' => $myId,
+				'text' => $myDir,
+				// 'icon' => $myIcon,
+				'path' => $myPath,
+				'type' => 'folder',
+				'children' => self::drawFolderItems($myPath),
+			];
+
+			// add new item
+			$myItems[] = $newItem;
+		}
+
+		$files = self::get_list_of_files($_path);
+
+		foreach ($files as $dir)
+		{
+			$myPath = realpath($dir);
+			$myDir = basename($myPath);
+			$myId = md5($myPath);
+			$myIcon = 'file';
 
 			$newItem =
 			[
@@ -19,20 +48,18 @@ class scanner
 				'text' => $myDir,
 				'icon' => $myIcon,
 				'path' => $myPath,
-				'type' => 'folder',
+				'type' => 'file',
 				'children' => [],
-				'files' => self::get_list_of_files($dir),
-				'folders' => self::get_list_of_folders($dir),
 			];
 
 			// add new item
-			$tree[] = $newItem;
+			$myItems[] = $newItem;
 		}
 
-		// var_dump(json_encode($tree, JSON_PRETTY_PRINT));
+		// var_dump(json_encode($myItems, JSON_PRETTY_PRINT));
 		// exit();
 
-		return $tree;
+		return $myItems;
 	}
 
 

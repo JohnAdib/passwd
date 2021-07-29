@@ -31,7 +31,7 @@
 
  <link href="<?php echo getUrl_wo_params(); ?>src/css/tailwind-2.1.1.min.css" rel="stylesheet">
 <?php if($myPageTree) {?>
- <link href="<?php echo getUrl_wo_params(); ?>src/lib/jstree/jstree-3.2.1.min.css" rel="stylesheet">
+ <link href="<?php echo getUrl_wo_params(); ?>src/lib/jstree/jstree-3.2.1.css" rel="stylesheet">
 <?php } ?>
 </head>
 <body class="bg-indigo-50">

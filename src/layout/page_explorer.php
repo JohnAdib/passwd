@@ -22,3 +22,5 @@ else
     </div>
 <?php } ?>
 </div>
+
+<div id="jstree_explorer" data-json='<?php echo json_encode($myExplorerTree) ?>'></div>

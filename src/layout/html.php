@@ -30,6 +30,9 @@
  <meta content="<?php echo $myPageTitle; ?>" property="og:site_name"/>
 
  <link href="<?php echo getUrl_wo_params(); ?>src/css/tailwind-2.1.1.min.css" rel="stylesheet">
+<?php if($myPageTree) {?>
+ <link href="<?php echo getUrl_wo_params(); ?>src/lib/jstree/jstree-3.2.1.min.css" rel="stylesheet">
+<?php } ?>
 </head>
 <body class="bg-indigo-50">
 <?php
@@ -62,6 +65,9 @@ else
 
  </div>
 <?php }?>
- <script src="<?php echo getUrl_wo_params(); ?>src/js/passwd-runner.js"></script>
+<?php if($myPageTree) {?>
+ <script src="<?php echo getUrl_wo_params(); ?>src/js/jquery-3.6.0.min.js"></script>
+ <script src="<?php echo getUrl_wo_params(); ?>src/lib/jstree/jstree-3.2.1.min.js"></script>
+<?php }?>
 </body>
 </html>

@@ -12,6 +12,7 @@ class template
 		$myPage = 'homepage';
 		$myPageTitle = '';
 		$myPageDesc = '';
+		$myPageTree = null;
 
 		if($_GET)
 		{
@@ -21,6 +22,7 @@ class template
 				// define folder and files array
 				$myExplorerTree = scanner::drawTree();
 				$myExplorerItems = [];
+				$myPageTree = true;
 			}
 			else if(isset($_GET["id"]))
 			{

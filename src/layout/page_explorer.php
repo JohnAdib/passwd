@@ -1,3 +1,7 @@
+<div class="grid grid-cols-3 gap-4">
+ <div id="jstree_explorer" data-json='<?php echo json_encode($myExplorerTree) ?>'></div>
+ <div class="col-span-2">
+
 <?php foreach ($myExplorerTree as $key => $item) { ?>
     <div class="flex items-center bg-indigo-500 rounded-md p-3 text-white cursor-pointer transition duration-500 ease-in-out hover:shadow hover:bg-indigo-600 mb-3">
         <div>
@@ -21,6 +25,5 @@ else
         </div>
     </div>
 <?php } ?>
-</div>
+ </div>
 
-<div id="jstree_explorer" data-json='<?php echo json_encode($myExplorerTree) ?>'></div>

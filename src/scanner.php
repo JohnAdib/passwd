@@ -40,7 +40,7 @@ class scanner
 			$myPath = realpath($dir);
 			$myDir = basename($myPath);
 			$myId = md5($myPath);
-			$myIcon = 'file';
+			$myIcon = 'jstree-file';
 
 			$newItem =
 			[
